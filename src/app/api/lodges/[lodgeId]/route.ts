@@ -40,7 +40,7 @@ interface LeanLodgeDocument {
   }>;
 }
 
-type MongooseLodgeDocument = Document & LeanLodgeDocument;
+type MongooseLodgeDocument = LeanLodgeDocument;
 
 // GET lodge by ID
 export async function GET(
@@ -445,7 +445,7 @@ export async function PUT(
       lodgeId,
       { $set: updateData },
       { new: true }
-    ).lean() as MongooseLodgeDocument;
+    ).lean();
 
     if (!updatedLodge) {
       throw new Error('Failed to update lodge');
