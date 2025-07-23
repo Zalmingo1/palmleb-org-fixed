@@ -445,7 +445,7 @@ export async function PUT(
       lodgeId,
       { $set: updateData },
       { new: true }
-    ).lean();
+    ).lean() as any;
 
     if (!updatedLodge) {
       throw new Error('Failed to update lodge');
