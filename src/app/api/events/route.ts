@@ -247,7 +247,6 @@ export async function POST(request: Request) {
     if (!isDistrictWide) {
       // Verify lodge access for lodge-specific events
       const hasLodgeAccess = user.administeredLodges?.includes(lodgeId) || 
-                            user.primaryLodge?._id === lodgeId ||
                             user.primaryLodge === lodgeId;
       
       console.log('Lodge access check:', {
