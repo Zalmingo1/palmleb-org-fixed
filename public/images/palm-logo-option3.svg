@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for contrast -->
+  <circle cx="256" cy="256" r="180" fill="#00000010" opacity="0.05"/>
+  
+  <!-- Main stem with gradient -->
+  <path d="M256 80V432" stroke="url(#goldGradient)" stroke-width="16" stroke-linecap="round"/>
+  
+  <!-- Abstract palm fronds - dynamic angles -->
+  <path d="M256 100L130 200" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 140L150 260" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 180L170 320" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  
+  <path d="M256 100L382 200" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 140L362 260" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 180L342 320" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Connecting arcs for modern feel -->
+  <path d="M130 200C170 230 210 240 256 240" stroke="#D4AF37" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M382 200C342 230 302 240 256 240" stroke="#D4AF37" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Bold base -->
+  <path d="M226 432C226 432 256 462 286 432" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="goldGradient" x1="256" y1="80" x2="256" y2="432" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F0E68C"/>
+      <stop offset="1" stop-color="#B8860B"/>
+    </linearGradient>
+  </defs>
+</svg> 

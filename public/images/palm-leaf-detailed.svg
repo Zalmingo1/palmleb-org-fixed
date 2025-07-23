@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main palm leaf shape -->
+  <path d="M256 40C256 40 150 120 150 280C150 360 200 440 256 472C312 440 362 360 362 280C362 120 256 40 256 40Z" fill="#D4AF37" opacity="0.9"/>
+  
+  <!-- Central stem -->
+  <path d="M256 80C256 80 220 120 220 200C220 240 230 280 256 300M256 80C256 80 292 120 292 200C292 240 282 280 256 300M256 80V300" stroke="#D4AF37" stroke-width="12"/>
+  
+  <!-- Leaf veins - left side -->
+  <path d="M256 100C256 100 200 150 190 220" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  <path d="M256 130C256 130 210 170 200 240" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  <path d="M256 160C256 160 220 190 210 260" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  <path d="M256 190C256 190 230 210 220 280" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  
+  <!-- Leaf veins - right side -->
+  <path d="M256 100C256 100 312 150 322 220" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  <path d="M256 130C256 130 302 170 312 240" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  <path d="M256 160C256 160 292 190 302 260" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  <path d="M256 190C256 190 282 210 292 280" stroke="#D4AF37" stroke-width="4" opacity="0.8"/>
+  
+  <!-- Horizontal fronds -->
+  <path d="M200 180C200 180 228 200 256 200M256 200C284 200 312 180 312 180M256 200V240" stroke="#D4AF37" stroke-width="8"/>
+  <path d="M210 240C210 240 233 260 256 260M256 260C279 260 302 240 302 240M256 260V290" stroke="#D4AF37" stroke-width="6"/>
+  <path d="M220 290C220 290 238 310 256 310M256 310C274 310 292 290 292 290M256 310V340" stroke="#D4AF37" stroke-width="4"/>
+  <path d="M230 340C230 340 243 360 256 360M256 360C269 360 282 340 282 340M256 360V390" stroke="#D4AF37" stroke-width="3"/>
+  <path d="M240 390C240 390 248 410 256 410M256 410C264 410 272 390 272 390M256 410V440" stroke="#D4AF37" stroke-width="2"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="256" cy="120" r="3" fill="#D4AF37"/>
+  <circle cx="256" cy="160" r="3" fill="#D4AF37"/>
+  <circle cx="256" cy="200" r="3" fill="#D4AF37"/>
+  <circle cx="256" cy="240" r="3" fill="#D4AF37"/>
+  <circle cx="256" cy="280" r="3" fill="#D4AF37"/>
+  
+  <!-- Subtle glow effect -->
+  <path d="M256 40C256 40 150 120 150 280C150 360 200 440 256 472C312 440 362 360 362 280C362 120 256 40 256 40Z" stroke="#F0E68C" stroke-width="2" opacity="0.3"/>
+</svg> 

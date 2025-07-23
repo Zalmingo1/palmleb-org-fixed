@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main stem -->
+  <path d="M256 60V440" stroke="#D4AF37" stroke-width="16" stroke-linecap="round"/>
+  
+  <!-- Palm fronds - left side -->
+  <path d="M256 100C256 100 180 120 140 180" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 140C256 140 190 150 150 200" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 180C256 180 200 190 170 230" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 220C256 220 210 230 190 260" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 260C256 260 220 270 210 290" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Palm fronds - right side -->
+  <path d="M256 100C256 100 332 120 372 180" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 140C256 140 322 150 362 200" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 180C256 180 312 190 342 230" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 220C256 220 302 230 322 260" stroke="#D4AF37" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 260C256 260 292 270 302 290" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Subtle details on fronds - left -->
+  <path d="M180 120C180 120 160 140 150 180" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M190 150C190 150 170 170 160 200" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M200 190C200 190 180 210 175 230" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M210 230C210 230 200 240 195 260" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Subtle details on fronds - right -->
+  <path d="M332 120C332 120 352 140 362 180" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M322 150C322 150 342 170 352 200" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M312 190C312 190 332 210 337 230" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M302 230C302 230 312 240 317 260" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Decorative base -->
+  <path d="M236 440C236 440 246 460 256 460C266 460 276 440 276 440" stroke="#D4AF37" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Subtle glow effect -->
+  <path d="M256 60V440" stroke="#F0E68C" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <path d="M256 100C256 100 180 120 140 180" stroke="#F0E68C" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <path d="M256 100C256 100 332 120 372 180" stroke="#F0E68C" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+</svg> 

@@ -1,0 +1,154 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  DISTRICT_ADMIN
+  LODGE_ADMIN
+  LODGE_MEMBER
+}
+
+model User {
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  email             String    @unique
+  password          String
+  name              String
+  role              UserRole  @default(LODGE_MEMBER)
+  profileImage      String?
+  position          String?
+  occupation        String?
+  bio               String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  lodge             Lodge?    @relation(fields: [lodgeId], references: [id])
+  lodgeId           String?   @db.ObjectId
+  
+  // Relations
+  posts             Post[]
+  events            Event[]
+  candidates        Candidate[]
+  comments          Comment[]
+  eventAttendees    EventAttendee[]
+  candidateFeedback CandidateFeedback[]
+}
+
+model Lodge {
+  id          String    @id @default(cuid())
+  name        String
+  number      String
+  location    String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  members     User[]
+  posts       Post[]
+  events      Event[]
+  candidates  Candidate[]
+}
+
+model Post {
+  id          String    @id @default(cuid())
+  title       String
+  content     String
+  isApproved  Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  author      User      @relation(fields: [authorId], references: [id])
+  authorId    String
+  lodge       Lodge     @relation(fields: [lodgeId], references: [id])
+  lodgeId     String
+  comments    Comment[]
+}
+
+model Comment {
+  id          String    @id @default(cuid())
+  content     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  author      User      @relation(fields: [authorId], references: [id])
+  authorId    String
+  post        Post      @relation(fields: [postId], references: [id])
+  postId      String
+}
+
+model Event {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  location    String
+  startDate   DateTime
+  endDate     DateTime
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  creator     User      @relation(fields: [creatorId], references: [id])
+  creatorId   String
+  lodge       Lodge     @relation(fields: [lodgeId], references: [id])
+  lodgeId     String
+  attendees   EventAttendee[]
+}
+
+model EventAttendee {
+  id          String    @id @default(cuid())
+  status      String    // "attending", "not_attending", "maybe"
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  event       Event     @relation(fields: [eventId], references: [id])
+  eventId     String
+
+  @@unique([userId, eventId])
+}
+
+model Candidate {
+  id          String    @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  photo       String?
+  background  String
+  expiresAt   DateTime
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  sponsor     User      @relation(fields: [sponsorId], references: [id])
+  sponsorId   String
+  lodge       Lodge     @relation(fields: [lodgeId], references: [id])
+  lodgeId     String
+  feedback    CandidateFeedback[]
+}
+
+model CandidateFeedback {
+  id          String    @id @default(cuid())
+  content     String
+  isPositive  Boolean
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  author      User      @relation(fields: [authorId], references: [id])
+  authorId    String
+  candidate   Candidate @relation(fields: [candidateId], references: [id])
+  candidateId String
+} 

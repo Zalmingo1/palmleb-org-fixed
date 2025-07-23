@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main stem -->
+  <path d="M256 80V432" stroke="#D4AF37" stroke-width="12" stroke-linecap="square"/>
+  
+  <!-- Geometric palm fronds - left side -->
+  <path d="M256 100L150 160" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 140L160 190" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 180L170 220" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 220L180 250" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 260L200 280" stroke="#D4AF37" stroke-width="8" stroke-linecap="square"/>
+  
+  <!-- Geometric palm fronds - right side -->
+  <path d="M256 100L362 160" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 140L352 190" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 180L342 220" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 220L332 250" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
+  <path d="M256 260L312 280" stroke="#D4AF37" stroke-width="8" stroke-linecap="square"/>
+  
+  <!-- Angular details -->
+  <path d="M150 160L130 200" stroke="#D4AF37" stroke-width="6" stroke-linecap="square"/>
+  <path d="M160 190L140 230" stroke="#D4AF37" stroke-width="6" stroke-linecap="square"/>
+  <path d="M170 220L155 250" stroke="#D4AF37" stroke-width="6" stroke-linecap="square"/>
+  
+  <path d="M362 160L382 200" stroke="#D4AF37" stroke-width="6" stroke-linecap="square"/>
+  <path d="M352 190L372 230" stroke="#D4AF37" stroke-width="6" stroke-linecap="square"/>
+  <path d="M342 220L357 250" stroke="#D4AF37" stroke-width="6" stroke-linecap="square"/>
+  
+  <!-- Decorative base -->
+  <path d="M236 432L256 452L276 432" stroke="#D4AF37" stroke-width="8" stroke-linecap="square"/>
+  
+  <!-- Subtle highlights -->
+  <path d="M256 80V432" stroke="#F0E68C" stroke-width="2" stroke-linecap="square" opacity="0.3"/>
+</svg> 

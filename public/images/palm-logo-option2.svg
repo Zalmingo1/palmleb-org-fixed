@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main stem -->
+  <path d="M256 80V432" stroke="#D4AF37" stroke-width="14" stroke-linecap="round"/>
+  
+  <!-- Minimalist palm fronds - alternating sides -->
+  <path d="M256 110C256 110 200 130 160 180" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 150C256 150 312 170 352 220" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 190C256 190 210 210 180 250" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 230C256 230 302 250 332 290" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 270C256 270 220 290 200 320" stroke="#D4AF37" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Subtle curve details -->
+  <path d="M160 180C160 180 150 210 155 240" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <path d="M352 220C352 220 362 250 357 280" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <path d="M180 250C180 250 175 270 180 290" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <path d="M332 290C332 290 337 310 332 330" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Elegant base -->
+  <path d="M236 432C236 432 256 452 276 432" stroke="#D4AF37" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Subtle glow -->
+  <path d="M256 80V432" stroke="#F0E68C" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+</svg> 
