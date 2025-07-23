@@ -43,7 +43,7 @@ model User {
 }
 
 model Lodge {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   number      String
   location    String
@@ -59,7 +59,7 @@ model Lodge {
 }
 
 model Post {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   content     String
   isApproved  Boolean   @default(false)
@@ -68,27 +68,27 @@ model Post {
   
   // Relations
   author      User      @relation(fields: [authorId], references: [id])
-  authorId    String
+  authorId    String    @db.ObjectId
   lodge       Lodge     @relation(fields: [lodgeId], references: [id])
-  lodgeId     String
+  lodgeId     String    @db.ObjectId
   comments    Comment[]
 }
 
 model Comment {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   content     String
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   
   // Relations
   author      User      @relation(fields: [authorId], references: [id])
-  authorId    String
+  authorId    String    @db.ObjectId
   post        Post      @relation(fields: [postId], references: [id])
-  postId      String
+  postId      String    @db.ObjectId
 }
 
 model Event {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
   location    String
@@ -99,29 +99,29 @@ model Event {
   
   // Relations
   creator     User      @relation(fields: [creatorId], references: [id])
-  creatorId   String
+  creatorId   String    @db.ObjectId
   lodge       Lodge     @relation(fields: [lodgeId], references: [id])
-  lodgeId     String
+  lodgeId     String    @db.ObjectId
   attendees   EventAttendee[]
 }
 
 model EventAttendee {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   status      String    // "attending", "not_attending", "maybe"
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   
   // Relations
   user        User      @relation(fields: [userId], references: [id])
-  userId      String
+  userId      String    @db.ObjectId
   event       Event     @relation(fields: [eventId], references: [id])
-  eventId     String
+  eventId     String    @db.ObjectId
 
   @@unique([userId, eventId])
 }
 
 model Candidate {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   email       String
   phone       String?
@@ -133,14 +133,14 @@ model Candidate {
   
   // Relations
   sponsor     User      @relation(fields: [sponsorId], references: [id])
-  sponsorId   String
+  sponsorId   String    @db.ObjectId
   lodge       Lodge     @relation(fields: [lodgeId], references: [id])
-  lodgeId     String
+  lodgeId     String    @db.ObjectId
   feedback    CandidateFeedback[]
 }
 
 model CandidateFeedback {
-  id          String    @id @default(cuid())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   content     String
   isPositive  Boolean
   createdAt   DateTime  @default(now())
@@ -148,7 +148,7 @@ model CandidateFeedback {
   
   // Relations
   author      User      @relation(fields: [authorId], references: [id])
-  authorId    String
+  authorId    String    @db.ObjectId
   candidate   Candidate @relation(fields: [candidateId], references: [id])
-  candidateId String
+  candidateId String    @db.ObjectId
 } 
