@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import dbConnect from '@/lib/mongodb';
-import User from '@/models/User';
-import { hashPassword } from '@/lib/auth';
+import { createUnifiedUser, findUnifiedUserByEmail } from '@/lib/auth/unified-auth';
 
 export async function POST(req: NextRequest) {
   try {
@@ -32,11 +30,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Connect to the database
-    await dbConnect();
-
     // Check if email already exists
-    const existingUser = await User.findOne({ email });
+    const existingUser = await findUnifiedUserByEmail(email);
     if (existingUser) {
       return NextResponse.json(
         { error: 'Email already in use' },
@@ -44,21 +39,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Hash the password
-    const passwordHash = await hashPassword(password);
-
-    // Create the user
-    const newUser = await User.create({
-      name,
+    // Create the user using unified auth
+    const newUser = await createUnifiedUser({
       email,
-      passwordHash,
+      password,
+      name,
       role,
       lodges: lodges || [],
       primaryLodge: primaryLodge || '',
-      administeredLodges: role === 'LODGE_ADMIN' ? (lodges || []) : [],
-      status: 'active',
-      memberSince: new Date().getFullYear().toString(),
     });
+
+    if (!newUser) {
+      return NextResponse.json(
+        { error: 'Failed to create user' },
+        { status: 500 }
+      );
+    }
 
     // Prepare user data to return (excluding sensitive information)
     const userData = {
@@ -66,9 +62,9 @@ export async function POST(req: NextRequest) {
       name: newUser.name,
       email: newUser.email,
       role: newUser.role,
-      lodges: newUser.lodges,
+      lodges: newUser.lodges || [],
       primaryLodge: newUser.primaryLodge,
-      administeredLodges: newUser.administeredLodges,
+      administeredLodges: newUser.administeredLodges || [],
     };
 
     return NextResponse.json({
@@ -82,4 +78,4 @@ export async function POST(req: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}
