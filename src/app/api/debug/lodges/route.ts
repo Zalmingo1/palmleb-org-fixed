@@ -11,10 +11,10 @@ export async function GET(req: NextRequest) {
     // Log raw data for debugging
     console.log('Raw lodges data:', JSON.stringify(lodges, null, 2));
     
-    // Transform ObjectId to string
-    const transformedLodges = lodges.map(lodge => ({
+    // Transform ObjectId to string with proper typing
+    const transformedLodges = lodges.map((lodge: any) => ({
       ...lodge,
-      _id: lodge._id.toString()
+      _id: lodge._id?.toString() || ''
     }));
 
     return NextResponse.json({
@@ -29,4 +29,4 @@ export async function GET(req: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}
