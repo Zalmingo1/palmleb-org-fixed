@@ -23,7 +23,7 @@ export async function GET() {
     }
     
     // Verify token and get user data
-    const userData = verifyToken(token);
+    const userData = await verifyToken(token);
     console.log('Token verification result:', userData ? 'Valid' : 'Invalid');
     
     if (!userData) {
@@ -48,4 +48,4 @@ export async function GET() {
       { status: 401 }
     );
   }
-} 
+}
